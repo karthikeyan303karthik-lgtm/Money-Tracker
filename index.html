@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Tracker.png">
+    <title>Money Tracker Pro</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>💰 Money Tracker Pro</h1>
+        <p>Track your finances professionally</p>
+        
+        <div class="profile-management">
+            <div class="profile-section">
+                <input id="name" type="text" placeholder="Enter profile name">
+                <button onclick="createProfile()" class="btn-create-profile">➕ Create Profile</button>
+            </div>
+            
+            <div class="profiles-list">
+                <h4>Your Profiles</h4>
+                <div id="profilesList" class="profiles-container"></div>
+            </div>
+            
+            <div class="current-profile" id="currentProfile" style="display:none;">
+                <span id="profileNameDisplay"></span>
+                <button onclick="deleteProfile()" class="btn-delete-profile">🗑️ Delete Profile</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard">
+
+        <div class="card balance">
+            <h3>Total Balance</h3>
+            <h2 id="balance">₹0</h2>
+        </div>
+
+        <div class="card income">
+            <h3>Total Income</h3>
+            <h2 id="income">₹0</h2>
+        </div>
+
+        <div class="card expense">
+            <h3>Total Expense</h3>
+            <h2 id="expense">₹0</h2>
+        </div>
+
+    </div>
+
+    <div class="form-section">
+
+        <h2>Add Transaction</h2>
+
+        <form id="transactionForm">
+
+            <input
+                type="text"
+                id="description"
+                placeholder="📝 Description"
+                required
+            >
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="💵 Amount"
+                step="0.01"
+                required
+            >
+
+            <select id="type" required>
+                <option value="">Select Type</option>
+                <option value="income">📈 Income</option>
+                <option value="expense">📉 Expense</option>
+            </select>
+
+            <button type="submit">
+                ➕ Add Transaction
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="history">
+
+        <h2>Transaction History</h2>
+
+        <ul id="transactionList"></ul>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
